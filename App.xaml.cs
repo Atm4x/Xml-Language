@@ -10,13 +10,14 @@ using System.Windows;
 namespace LanguageClassTest
 {
     /// <summary>
-    /// Логика взаимодействия для App.xaml
+    /// Свободная реализация смены языка
     /// </summary>
     public partial class App : Application
     {
         private static LanguageModel _languageModel = new LanguageModel();
         public delegate void LanguageUpdate(LanguageModel model);
         public static event LanguageUpdate LanguageUpdated;
+        
         public static LanguageModel CurrentLanguage { get => _languageModel; set
             {
                 _languageModel = value;
