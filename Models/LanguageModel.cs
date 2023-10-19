@@ -32,6 +32,7 @@ namespace LanguageClassTest.Models
         }
     }
 
+    //Модель языка
     public class LanguageModel
     {
         [XmlElement("Language")]
@@ -40,6 +41,7 @@ namespace LanguageClassTest.Models
         [XmlElement("LanguageCode")]
         public Field<string> Code { get; set; } = "ru-RU";
 
+        //Сопоставление Name элемента в XAML с необходимым для передачи значением.
         [XmlArray()]
         public List<Field<string>> Translate { get; set; } =
         new List<Field<string>>
