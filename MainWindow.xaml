@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:LanguageClassTest"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+<!--Grid для поиска элементов-->
     <Grid x:Name="xGrid">
-        <StackPanel x:Name="boobs">
+        <StackPanel>
+        <!--TextBlocks с аттрибутом Name, используемый для поиска-->
             <TextBlock x:Name="Element1" Text="hello"/>
             <TextBlock x:Name="Element2" Text="friend"/>
             <Button Click="Button_Click" Content="Russian"/>
