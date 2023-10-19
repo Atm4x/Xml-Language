@@ -1,6 +1,6 @@
 # Xml-Language - simple system of multilanguage support
 
-Main language model and xaml converter are provided
+Main language model (LanguageModel) and xaml converter are provided
 
 MainWindow.xaml.cs contains the example of using it
 
