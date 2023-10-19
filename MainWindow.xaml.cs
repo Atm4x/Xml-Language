@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace LanguageClassTest
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         LanguageModel language;
@@ -28,23 +25,29 @@ namespace LanguageClassTest
             InitializeComponent();
 
             language = new LanguageModel();
-
+            
             App.LanguageUpdated += LangUpdate;
         }
+        
+         //Оповещаемый метод
         private void LangUpdate(Models.LanguageModel lang)
         {
+            //поиск по name'ам
             foreach (var item in lang.Translate)
             {
-                var blocks = UIFinder.FindVisualChildren<TextBlock>(xGrid).FirstOrDefault(x => x.Name == item.Name);
-                if (blocks != null)
+                //поиск всех TEXTBLOCK с нужным Name
+                var txtblocks = UIFinder.FindVisualChildren<TextBlock>(xGrid).FirstOrDefault(x => x.Name == item.Name);
+                if (txtblocks != null)
                 {
-                    blocks.Text = item.Value;
+                    txtblocks.Text = item.Value;
                 }
             }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+        
+            //Проверка системы на русском
             App.CurrentLanguage = new LanguageModel();
             language = new LanguageModel()
             {
@@ -60,7 +63,7 @@ namespace LanguageClassTest
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-
+            //Проверка системы на китайском
             App.CurrentLanguage = new LanguageModel();
             language = new LanguageModel() { Translate = new List<Field<string>>()
                 {
