@@ -11,6 +11,7 @@ namespace LanguageClassTest.Services
 {
     public static class XmlConverter
     {
+        //Создание XAML пустого класса
         public static string ToXaml<T>() where T : new()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
@@ -28,6 +29,8 @@ namespace LanguageClassTest.Services
                 }
             }
         }
+        
+        //Создание XAML заполненного класса
         public static string ToXaml<T>(T obj) where T : new()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
@@ -45,6 +48,8 @@ namespace LanguageClassTest.Services
                 }
             }
         }
+        
+        //Десериализация XAML в класс 
         public static T FromXml<T>(string xmlCodePath) where T : new()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
